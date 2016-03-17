@@ -6,7 +6,7 @@ function Destination(location, season, landmarks) {
 }
 
 Destination.prototype.information = function () {
-  return this.location + " " + this.season + "" + this.landmarks;
+  return this.location + " " + this.season + " " + this.landmarks;
 };
 
 // user interface logic
