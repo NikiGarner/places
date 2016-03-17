@@ -6,7 +6,7 @@ function Destination(location, season, landmarks) {
 }
 
 Destination.prototype.information = function () {
-  return this.location + " " + this.season + " " + this.landmarks;
+  return this.location;
 };
 
 // user interface logic
@@ -24,12 +24,11 @@ $(document).ready(function() {
 
     $("#result").last().click(function() {
       $("#show-result").show();
-      $("#show-result h2").text(newDestination.information);
+      $("#show-result h2").text(newDestination.location);
       $(".location-name").text(newDestination.location);
       $(".season").text(newDestination.season);
       $(".landmarks").text(newDestination.landmarks);
     });
-
 
 
   });
