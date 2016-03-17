@@ -11,7 +11,7 @@ Destination.prototype.information = function () {
 
 // user interface logic
 $(document).ready(function() {
-  $("form#form-group").submit(funciton(event){
+  $("form#form-group").submit(function(event){
     event.preventDefault();
 
     var inputtedLocation = $("input#new-location").val();
@@ -20,6 +20,17 @@ $(document).ready(function() {
 
     var newDestination = new Destination(inputtedLocation, inputtedSeason, inputtedLandmarks);
 
-    $("ul")
-  }
+    $("ul#result").append("<li><span class='destination'>" + newDestination.information() + "</span></li>");
+
+    $("#result").last().click(function() {
+      $("#show-result").show();
+      $("#show-result h2").text(newDestination.information);
+      $(".location-name").text(newDestination.location);
+      $(".season").text(newDestination.season);
+      $(".landmarks").text(newDestination.landmarks);
+    });
+
+
+
+  });
 });
